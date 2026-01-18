@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0d1117;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.container {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.task {
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+#captchaCanvas {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background: #0d1117;
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.count {
+    color: #8b949e;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.count span {
+    color: #58a6ff;
+    font-weight: bold;
+}
+
+.error {
+    display: none;
+    color: #f85149;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: rgba(248, 81, 73, 0.1);
+    border: 1px solid rgba(248, 81, 73, 0.3);
+    border-radius: 6px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #58a6ff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: #4a8edf;
+}
+
+.footer {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 12px;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 18px;
+    }
+}
+.lang-switcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+.lang-btn {
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.lang-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+.lang-btn.active {
+    background: rgba(255,255,255,0.3);
+}
