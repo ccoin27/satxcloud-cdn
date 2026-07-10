@@ -42,14 +42,17 @@
 
       var unlock = document.getElementById('audio_unlock_screen');
       if (unlock) {
-        unlock.remove();
+        unlock.style.display = 'none';
+        unlock.setAttribute('aria-hidden', 'true');
       }
       document.body.style.backgroundColor = 'black';
       main();
 
       try {
         if (window.parent && window.parent !== window) {
-          window.parent.postMessage({ type: 'kwas-eaglecraft-started' }, getParentOrigin());
+          window.requestAnimationFrame(function () {
+            window.parent.postMessage({ type: 'kwas-eaglecraft-started' }, getParentOrigin());
+          });
         }
       } catch (err) {
         // ignore
