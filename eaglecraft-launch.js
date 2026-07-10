@@ -42,11 +42,28 @@
 
       var unlock = document.getElementById('audio_unlock_screen');
       if (unlock) {
+        unlock.blur();
+        unlock.setAttribute('tabindex', '-1');
+        unlock.setAttribute('inert', '');
         unlock.style.display = 'none';
         unlock.setAttribute('aria-hidden', 'true');
       }
       document.body.style.backgroundColor = 'black';
       main();
+
+      window.requestAnimationFrame(function () {
+        try {
+          var gameFrame = document.getElementById('game_frame');
+          if (gameFrame && typeof gameFrame.focus === 'function') {
+            gameFrame.focus();
+          }
+          if (document.activeElement === unlock || !document.activeElement) {
+            document.body.focus();
+          }
+        } catch (err) {
+          // ignore
+        }
+      });
 
       try {
         if (window.parent && window.parent !== window) {
